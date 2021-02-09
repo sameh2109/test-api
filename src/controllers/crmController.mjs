@@ -1,56 +1,56 @@
 import mongoose from 'mongoose'
-import {ContactSchema} from '../models/crmModel.mjs'
+import {ProductTable} from '../models/crmModel.mjs'
 
-const Contact = mongoose.model('Contact', ContactSchema)
+const Product = mongoose.model('Product', ProductTable)
 
-const addNewContact = (req,res)=>{
-    let newContact = new Contact(req.body);
-    newContact.save((err, contact)=>{
+const addNewProduct = (req,res)=>{
+    let newProduct = new Product(req.body);
+    newProduct.save((err, product)=>{
         if (err){
             res.send(err)
         }
-        res.json(contact)
+        res.json(product)
     })
 }
 
-export const getContact = (req,res)=>{
+export const getProduct = (req,res)=>{
     
-    Contact.find({},(err,contact)=>{
+    Product.find({},(err,product)=>{
         if (err){
             res.send(err)
         }
-        res.json(contact)
+        res.json(product)
     })
 }
 
-export const getContactWithID = (req,res)=>{
+export const getProductWithID = (req,res)=>{
     
-    Contact.findById(req.params.contactID,(err,contact)=>{
+    Product.findById(req.params.productID,(err,product)=>{
         if (err){
             res.send(err)
         }
-        res.json(contact)
+        res.json(product)
     })
 }
-export const updateContact = (req,res)=>{
+export const updateProduct = (req,res)=>{
     
-    Contact.findOneAndUpdate({_id:req.params.contactID},req.body,{new:true,useFindAndModify:false},(err,contact)=>{
+    Product.findOneAndUpdate({_id:req.params.productID},req.body,{new:true,useFindAndModify:false},(err,product)=>{
         if (err){
             res.send(err)
         }
-        res.json(contact)
+        res.json(product)
     })
 }
 
-export const deleteContact = (req,res)=>{
+export const deleteProduct = (req,res)=>{
     
-    Contact.remove({_id:req.params.contactID},(err,contact)=>{
+    Product.remove({_id:req.params.productID},(err,product)=>{
         if (err){
             res.send(err)
         }
-        res.json({message:'Contact Deleted Scuccessfully'})
+        res.json({message:'Product Deleted Scuccessfully'})
     })
 }
 
 
-export  default addNewContact;
+export  default addNewProduct;

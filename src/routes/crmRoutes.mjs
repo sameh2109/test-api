@@ -1,19 +1,19 @@
-import addNewContact from '../controllers/crmController.mjs'
-import {getContact,getContactWithID,updateContact,deleteContact} from '../controllers/crmController.mjs'
+import addNewProduct from '../controllers/crmController.mjs'
+import {getProduct,getProductWithID,updateProduct,deleteProduct} from '../controllers/crmController.mjs'
 const routes = (app)=>{
-    app.route('/contact')
+    app.route('/product')
         .get((req,res,next)=>{
             //middleware
             console.log(`Request from: ${req.originalUrl}`)
             console.log(`Request type: ${req.method}`)
             next()
-        }, getContact)
+        }, getProduct)
         
-        .post(addNewContact)
-    app.route('/contact/:contactID')
-        .get(getContactWithID) 
-        .put(updateContact)
-        .delete(deleteContact)
+        .post(addNewProduct)
+    app.route('/product/:productID')
+        .get(getProductWithID) 
+        .put(updateProduct)
+        .delete(deleteProduct)
 }
 
 export default routes;

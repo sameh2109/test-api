@@ -2,24 +2,33 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-export const ContactSchema = new Schema({
-    firstName:{
+export const ProductTable = new Schema({
+    title:{
         type:String,
-        required:"Enter your first name"
+        
 
     },
-    lastName:{
+    description:{
         type:String,
-        required:"Enter your last name"
+        
     },
-    email:{
+    image:{
         type:String
     },
-    company:{
-        type:String
-    },
-    phoneNumber:{
+    rating:{
         type:Number
+    },
+    price:{
+        type:Number
+    },
+    isFavourite:{
+        type:Boolean
+    },
+    isPopular:{
+        type:Boolean
+    },
+    category:{
+        type:String
     },
     createdDate:{
         type:Date,
