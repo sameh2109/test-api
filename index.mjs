@@ -9,7 +9,7 @@ const port = process.env.PORT || 4000
 // const {routes} = routes
 //mongoose connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://sameh:Abc123456@cluster0.vaaep.mongodb.net/<dbname>?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://sameh:Abc123456@cluster0.ua3rt.mongodb.net/product?retryWrites=true&w=majority',{
     useNewUrlParser:true,
     useUnifiedTopology:true
 })
