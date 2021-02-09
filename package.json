@@ -4,7 +4,7 @@
   "description": "crm backend",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node ./index.mjs"
+    "start": "babel-node index.mjs"
   },
   "author": "sameh",
   "license": "ISC",
